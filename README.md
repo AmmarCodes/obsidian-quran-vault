@@ -6,6 +6,8 @@ The current structure doesn't have any links, it's up to you to link Ayat.
 
 The content is built from [`quran-json`](https://github.com/risan/quran-json).
 
+<img width="1400" alt="Screenshot of Obsidian Quran Vault" src="https://user-images.githubusercontent.com/351256/145760892-086ec177-26a1-4d7e-9aad-d711e8aa17ad.png">
+
 ## Usage
 
 Download the [zip file](https://github.com/AmmarCodes/obsidian-quran-vault/releases/) from the latest release, extract its content and place it inside the Obsidian vault.
