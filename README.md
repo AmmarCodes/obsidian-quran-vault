@@ -26,10 +26,16 @@ First install the dependencies
 yarn install
 ```
 
-Then to generate the `.md` files run
+Then to generate the Arabic `.md` files run
 
 ```bash
 yarn start
+```
+
+To generate the English `.md` files run
+
+```bash
+yarn start-en
 ```
 
 ## License

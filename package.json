@@ -9,6 +9,7 @@
     "quran-json": "^3.1.2"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "start-en": "node src/en.js"
   }
 }
