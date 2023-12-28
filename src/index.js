@@ -18,7 +18,7 @@ surahs.forEach((surah) => {
     // creating files inside directory
     surah.verses.forEach((verse) => {
       const verseFilePath = `${surahFolderPath}/${verse.id}.md`;
-      const content = `---\ntags: #quran #${surahTitle}\n---\n\n> ${verse.text}\n`;
+      const content = `---\ntags: \n - quran \n - "${surahTitle}"\n---\n\n> ${verse.text}\n`;
       fs.outputFile(verseFilePath, content, (err) => {
         if (err) {
           console.log(err);
