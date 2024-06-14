@@ -6,36 +6,36 @@ const quranJsonPath = require.resolve("quran-json/dist/quran.json");
 
 const surahs = fs.readJsonSync(quranJsonPath);
 
+fs.cpSync(".obsidian", VAULT_PATH + "/.obsidian", { recursive: true });
+
 surahs.forEach((surah) => {
   const surahTitle = surah.transliteration;
-  const surahFolderPath = `${VAULT_PATH}${surahTitle}`;
-  fs.ensureDir(surahFolderPath, (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
+  const surahPath = `${VAULT_PATH}${surahTitle}.md`;
 
-    // creating files inside directory
-    surah.verses.forEach((verse) => {
-      const verseFilePath = `${surahFolderPath}/${verse.id}.md`;
-      const content = `---
+  // Surah content
+  let content = `---
 tags:
  - quran
 aliases:
  - "${surahTitle}"
 ---
-
-> ${verse.text}
 `;
-      fs.outputFile(verseFilePath, content, (err) => {
-        if (err) {
-          console.log(err);
-        }
-      });
-    });
 
-    // the following will create `index.md` file in each surah folder containing an internal link to each verse
-    /**
+  // adding Ayahs to the surah's content
+  surah.verses.forEach((verse) => {
+    content += `# ${verse.id}
+${verse.text}
+
+`;
+  });
+  fs.outputFile(surahPath, content, (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+
+  // the following will create `index.md` file in each surah folder containing an internal link to each verse
+  /**
     let indexContent = `# ${surahTitle}\n\n`;
     [...Array(surah.verses.length)].map((_, i) => {
       // since i will start at 0
@@ -45,5 +45,4 @@ aliases:
 
     fs.outputFile(`${VAULT_PATH}${surahTitle}/index.md`, indexContent);
     */
-  });
 });
