@@ -10,7 +10,9 @@ fs.cpSync(".obsidian", VAULT_PATH + "/.obsidian", { recursive: true });
 
 surahs.forEach((surah) => {
   const surahTitle = surah.transliteration;
-  const surahPath = `${VAULT_PATH}${surahTitle}.md`;
+  const surahNumber = String(surah.id).padStart(3, "0");
+  const surahNumberedTitle = surahNumber + " " + surahTitle;
+  const surahPath = `${VAULT_PATH}${surahNumberedTitle}.md`;
 
   // Surah content
   let content = `---
@@ -18,6 +20,8 @@ tags:
  - quran
 aliases:
  - "${surahTitle}"
+ - "${surahNumber}"
+ - "${surahNumberedTitle}"
 ---
 `;
 
