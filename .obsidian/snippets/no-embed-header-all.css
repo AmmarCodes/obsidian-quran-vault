@@ -1,0 +1,8 @@
+.markdown-embed h1,
+.markdown-embed h2,
+.markdown-embed h3,
+.markdown-embed h4,
+.markdown-embed h5,
+.markdown-embed h6 {
+  display: none;
+}
