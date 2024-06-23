@@ -18,9 +18,11 @@ surahs.forEach((surah) => {
   let content = `---
 tags:
  - quran
+total_verses: ${surah.total_verses}
 aliases:
  - "${surahTitle}"
- - "${surahNumber}"
+ - "${surah.name}"
+ - "${surahNumber} ${surah.name}"
  - "${surahNumberedTitle}"
 ---
 `;
