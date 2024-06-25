@@ -1,5 +1,8 @@
 # Obsidian Quran Vault
 
+> [!TIP]
+> Checkout [Quran Helper](https://github.com/AmmarCodes/obsidian-quran-helper-plugin) plugin to help you insert any Ayah in your note.
+
 An initiative to organize the Quran within [Obsidian.md](https://obsidian.md) vault, allowing easier note taking, linking, and referencing.
 
 The current structure doesn't have any links, it's up to you to link Ayat.
